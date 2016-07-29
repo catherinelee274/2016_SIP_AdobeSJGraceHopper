@@ -1,4 +1,5 @@
-
+var enterRounds = document.getElementById('enterbutton');
+var studyMinutes = 3;
 
 function startTimer(duration, display) {
     var start = Date.now(),
@@ -16,8 +17,9 @@ function startTimer(duration, display) {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
+		
         display.textContent = minutes + ":" + seconds; 
+
 
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
@@ -33,7 +35,20 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 5,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+	//enterRounds.addEventListener("click",function(){
+		//var input = document.getElementById('exampleInputName2').value
+		//console.log(input)
+
+		//for (var i=0;i<input;i++){
+			
+			var fiveMinutes = 60 * studyMinutes;
+			display = document.querySelector('#time');
+			startTimer(fiveMinutes, display);
+			
+		//}
+	//});
+	
+	
+	
+    
 };

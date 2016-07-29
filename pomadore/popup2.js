@@ -1,5 +1,4 @@
 
-
 var studyMinutes = 3; //minutes of "focus" 
 var duration = 60 * studyMinutes; //total minutes in seconds
 var display = document.querySelector('#time');
@@ -34,12 +33,10 @@ var display = document.querySelector('#time');
 
 
 window.onload = function () {
-	//for (var i = 0;i<rounds;i++)
+	
 	
 	var startButton = document.getElementById('start button');
 	startButton.addEventListener("click",function(){
-	//display.textContent = minutes + ":" + seconds; 
-	//timer()
 	setInterval(timer, 20); //first parameter is thing to be executed, second one is time to wait in milliseconds before it happens again. displays the timer 
 	});
 
