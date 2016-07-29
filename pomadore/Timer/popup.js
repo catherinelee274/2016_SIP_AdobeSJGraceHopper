@@ -35,18 +35,18 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-	//enterRounds.addEventListener("click",function(){
-		//var input = document.getElementById('exampleInputName2').value
-		//console.log(input)
+	enterRounds.addEventListener("click",function(){
+		var input = document.getElementById('exampleInputName2').value
+		console.log(input)
 
-		//for (var i=0;i<input;i++){
+		for (var i=0;i<input;i++){
 			
 			var fiveMinutes = 60 * studyMinutes;
 			display = document.querySelector('#time');
 			startTimer(fiveMinutes, display);
 			
-		//}
-	//});
+		}
+	});
 	
 	
 	
