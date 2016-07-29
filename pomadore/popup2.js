@@ -1,7 +1,7 @@
 
 
-var studyMinutes = 3;
-var duration = 60 * studyMinutes;
+var studyMinutes = 3; //minutes of "focus" 
+var duration = 60 * studyMinutes; //total minutes in seconds
 var display = document.querySelector('#time');
 
 	
@@ -33,16 +33,6 @@ var display = document.querySelector('#time');
 }
 
 
-/*function anonfunction(){
-window.onload = function () {
-	//for (var i = 0;i<rounds;i++)
-    var studyTime = 60 * studyMinutes,
-        display = document.querySelector('#time');
-    startTimer(studyTime, display);
-};};
-
-
-startButton.getEventListener("click", function(){console.log("poop")});*/
 window.onload = function () {
 	//for (var i = 0;i<rounds;i++)
 	
