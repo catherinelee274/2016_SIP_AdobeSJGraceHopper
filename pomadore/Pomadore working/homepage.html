@@ -114,19 +114,29 @@
         <p class="note" data-i18n="options_site_list_info"></p>
         <p class="note" data-i18n="options_site_list_syntax"></p>
       </div>
-      <div id="durations">
+	  
+	  
+      <!--<div id="durations">
         <label for="work-duration">
-          <span data-i18n="work" data-i18n-caps></span>:
+          <span data-i18n="work" data-i18n-caps></span>: 
         </label>
-        <input id="work-duration" type="text" size="2" />
+        <input id="work-duration" type="text" size="2"></input>  
         <span class="minutes" data-i18n="minutes"></span>
         <label for="break-duration">
           <span data-i18n="break" data-i18n-caps></span>:
         </label>
-        <input id="break-duration" type="text" size="2" />
+        <input id="break-duration" type="text" size="2" ></input> 
         <span class="minutes" data-i18n="minutes"></span>
         <span id="time-format-error" data-i18n="options_time_format_error"></span>
-      </div>
+      </div> --> 
+	  <form>
+		<div class="form-group">
+			<label for="formGroupExampleInput">Rounds</label>
+			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rounds">
+		</div>
+	  
+	  
+	  
       <div>
         <input id="show-notifications" type="checkbox" />
         <label for="show-notifications" data-i18n="options_show_notifications"></label>
@@ -146,6 +156,7 @@
       <span id="save-successful" data-i18n="options_save_successful"></span>
     </form>
     <script type="text/javascript" src="options.js"></script>
+	<script type="text/javascript" src="background.js"></script> 
   </body>
 </html>
 
