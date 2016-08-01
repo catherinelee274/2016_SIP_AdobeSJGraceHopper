@@ -3,6 +3,7 @@
   Constants
 
 */
+var input = document.getElementById('formGroupExampleInput');
 
 var PREFS = loadPrefs(),
 BADGE_BACKGROUND_COLORS = {

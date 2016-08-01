@@ -3,7 +3,6 @@
 */
 
 // Localize all elements with a data-i18n="message_name" attribute
-var input = document.getElementById('formGroupExampleInput');
 
 var localizedElements = document.querySelectorAll('[data-i18n]'), el, message;
 for(var i = 0; i < localizedElements.length; i++) {
