@@ -3,7 +3,7 @@
   Constants
 
 */
-var input = document.getElementById('formGroupExampleInput');
+
 var PREFS = loadPrefs(),
 BADGE_BACKGROUND_COLORS = {
   work: [192, 0, 0, 255],
@@ -107,7 +107,6 @@ for(var i in iconTypeS) {
 
 */
 
-	
 function Pomodoro(options) {
   this.mostRecentMode = 'break';
   this.nextMode = 'work';
@@ -139,8 +138,6 @@ function Pomodoro(options) {
   }
 }
 
-
-
 Pomodoro.Timer = function Timer(pomodoro, options) {
   var tickInterval, timer = this;
   this.pomodoro = pomodoro;
@@ -160,7 +157,7 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
 
   this.timeRemainingString = function () {
     if(this.timeRemaining >= 60) {
-      return Math.round(this.timeRemaining / 60) + "m"; //the icon 
+      return Math.round(this.timeRemaining / 60) + "m";
     } else {
       return (this.timeRemaining % 60) + "s";
     }
@@ -176,7 +173,6 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
     }
   }
 }
-
 
 /*
 

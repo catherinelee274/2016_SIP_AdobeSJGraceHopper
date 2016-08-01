@@ -29,16 +29,12 @@ var form = document.getElementById('options-form'),
   saveSuccessfulEl = document.getElementById('save-successful'),
   timeFormatErrorEl = document.getElementById('time-format-error'),
   background = chrome.extension.getBackgroundPage(),
-<<<<<<< HEAD
-  startCallbacks = {}, durationEls = {}; //duration list ?
-=======
   startCallbacks = {}, durationEls = {};
 
   
->>>>>>> origin/dev
   
-durationEls['work'] = document.getElementById('work-duration'); //duration els again???
-durationEls['break'] = document.getElementById('break-duration'); 
+durationEls['work'] = document.getElementById('work-duration');
+durationEls['break'] = document.getElementById('break-duration');
 
 var TIME_REGEX = /^([0-9]+)(:([0-9]{2}))?$/;
 
@@ -92,7 +88,7 @@ shouldRingEl.checked = background.PREFS.shouldRing;
 clickRestartsEl.checked = background.PREFS.clickRestarts;
 whitelistEl.selectedIndex = background.PREFS.whitelist ? 1 : 0;
 
-/*var duration, minutes, seconds;
+var duration, minutes, seconds;
 for(var key in durationEls) {
   duration = background.PREFS.durations[key];
   seconds = duration % 60;
@@ -105,7 +101,7 @@ for(var key in durationEls) {
     durationEls[key].value = minutes;
   }
   durationEls[key].onfocus = formAltered;
-}*/
+}
 
 function setInputDisabled(state) {
   siteListEl.disabled = state;
