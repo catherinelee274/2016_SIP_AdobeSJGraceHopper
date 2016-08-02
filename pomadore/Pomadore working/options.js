@@ -101,6 +101,9 @@ for(var key in durationEls) {
   durationEls[key].onfocus = formAltered;
 }
 
+
+
+
 function setInputDisabled(state) {
   siteListEl.disabled = state;
   whitelistEl.disabled = state;

@@ -151,8 +151,8 @@ function Pomodoro(options) {
   }
 }
 
-
-for (i=0; i< user_rounds.length; i++) {
+//var user_rounds = document.getElementById("rounds")
+for (i=0; i< window.user_rounds; i++) {
 	Pomodoro.Timer = function Timer(pomodoro, options) {
   var tickInterval, timer = this; n
   this.pomodoro = pomodoro;
