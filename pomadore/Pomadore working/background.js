@@ -151,8 +151,10 @@ function Pomodoro(options) {
   }
 }
 
-Pomodoro.Timer = function Timer(pomodoro, options) {
-  var tickInterval, timer = this;
+
+for (i=0; i< user_rounds.length; i++) {
+	Pomodoro.Timer = function Timer(pomodoro, options) {
+  var tickInterval, timer = this; n
   this.pomodoro = pomodoro;
   this.timeRemaining = options.duration;
   this.type = options.type;
@@ -185,6 +187,8 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
       options.onEnd(timer);
     }
   }
+}
+
 }
 
 /*
