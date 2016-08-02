@@ -3,7 +3,7 @@
   Constants
 
 */
-var input = document.getElementById('formGroupExampleInput');
+
 var PREFS = loadPrefs(),
 BADGE_BACKGROUND_COLORS = {
   work: [192, 0, 0, 255],
@@ -16,7 +16,7 @@ loadRingIfNecessary();
 function defaultPrefs() {
   return {
     siteList: [
-
+   
     ],
     durations: { // in seconds
       work: 25 * 60,
@@ -107,7 +107,6 @@ for(var i in iconTypeS) {
 
 */
 
-	
 function Pomodoro(options) {
   this.mostRecentMode = 'break';
   this.nextMode = 'work';
@@ -139,17 +138,8 @@ function Pomodoro(options) {
   }
 }
 
-<<<<<<< HEAD
-//var user_rounds = document.getElementById("rounds")
-for (i=0; i< window.user_rounds; i++) {
-	Pomodoro.Timer = function Timer(pomodoro, options) {
-  var tickInterval, timer = this; n
-=======
-
-
 Pomodoro.Timer = function Timer(pomodoro, options) {
   var tickInterval, timer = this;
->>>>>>> origin/dev
   this.pomodoro = pomodoro;
   this.timeRemaining = options.duration;
   this.type = options.type;
@@ -167,7 +157,7 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
 
   this.timeRemainingString = function () {
     if(this.timeRemaining >= 60) {
-      return Math.round(this.timeRemaining / 60) + "m"; //the icon 
+      return Math.round(this.timeRemaining / 60) + "m";
     } else {
       return (this.timeRemaining % 60) + "s";
     }
@@ -183,11 +173,6 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
     }
   }
 }
-
-<<<<<<< HEAD
-}
-=======
->>>>>>> origin/dev
 
 /*
 
@@ -289,17 +274,17 @@ function executeInAllBlockedTabs(action) {
     }
   });
 }
-
+'
 var notification, mainPomodoro = new Pomodoro({
   getDurations: function () { return PREFS.durations },
   timer: {
     onEnd: function (timer) {
       chrome.browserAction.setIcon({
         path: ICONS.ACTION.PENDING[timer.pomodoro.nextMode]
-      });	
+      });
       chrome.browserAction.setBadgeText({text: ''});
       
-      if(true) {
+      if(PREFS.showNotifications) {
         var nextModeName = chrome.i18n.getMessage(timer.pomodoro.nextMode);
         chrome.notifications.create("", {
           type: "basic",
