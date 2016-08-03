@@ -5,6 +5,8 @@
 */
 var rounds = 1;
 var originalRounds;
+var mainPomodoro;
+var breakPomodoro;
 
 var PREFS = loadPrefs(),
 BADGE_BACKGROUND_COLORS = {
@@ -303,7 +305,9 @@ function executeInAllBlockedTabs(action) {
   });
 }
 
-var notification, mainPomodoro = new Pomodoro({
+function initPomodoros(){
+	var notification;
+	mainPomodoro = new Pomodoro({
   getDurations: function () { return PREFS.durations },
   timer: {
     onEnd: function (timer) {
@@ -404,7 +408,6 @@ breakPomodoro = new Pomodoro({
         color: BADGE_BACKGROUND_COLORS[timer.type]
       });
       
-       
 	  executeInAllBlockedTabs('unblock');
 	  
       if(notification) notification.cancel();
@@ -422,15 +425,18 @@ breakPomodoro = new Pomodoro({
   }
 }, 'break', 'work');
 //var session = [breakPomodoro, mainPomodoro()]
+}
+
 
 
 chrome.browserAction.onClicked.addListener(function (tab) {
+  initPomodoros();
   if(breakPomodoro.running) { 
       if(PREFS.clickRestarts) {
           breakPomodoro.restart();
       }
   } else {
-	  rounds = 2;
+	  rounds = 1;
 	  originalRounds = rounds;
 	  breakPomodoro.start(true);
       //mainPomodoro.start();
@@ -442,7 +448,19 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 	
   if(breakPomodoro.mostRecentMode == 'work') {
     executeInTabIfBlocked('block', tab);
+  }else{
+	  executeInTabIfBlocked('unblock', tab);
   }
+  
+  if (mainPomodoro){
+	    if(mainPomodoro.mostRecentMode == 'work') {
+			executeInTabIfBlocked('block', tab);
+		}else{
+			executeInTabIfBlocked('unblock', tab);
+		} 
+  }
+		
+  
 });
 
 chrome.notifications.onClicked.addListener(function (id) {
