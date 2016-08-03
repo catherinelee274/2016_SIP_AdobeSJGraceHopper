@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pomadore",
+  "description": "This extension allows an user to study without procrastinating using the Pomodore technique.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "pomadoreicon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
